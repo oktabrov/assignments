@@ -1,0 +1,7 @@
+MainSt,Downtown,450,100
+Broadway,Downtown,300,50
+OakAve,Suburbs,100,20
+PineRd,Suburbs,50,10
+Hwy101,Highway,800,400
+Error,Line,Missing,Data
+MarketSt,Downtown,500,200

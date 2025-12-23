@@ -1,0 +1,11 @@
+DISTRICT TRAFFIC VOLUME
+-----------------------
+Downtown: 1600
+Suburbs: 180
+Highway: 1200
+
+CONGESTED STREETS (> 500 vehicles)
+----------------------------------
+MainSt (550 vehicles)
+Hwy101 (1200 vehicles)
+MarketSt (700 vehicles)
