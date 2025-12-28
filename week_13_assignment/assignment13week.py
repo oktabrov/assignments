@@ -157,7 +157,7 @@ def main():
         return f'Error: {error}'
     try:
         write_to_lua(list_of_info)
-        return "Successfully written to report.lua ✅"
+        return "All information successfully saved to report.lua ✅"
     except Exception as error:
         return f"Error: {error}"
 print(main())
