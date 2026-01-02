@@ -2,82 +2,78 @@
 🎬 MOVIE PROFILE
 ============================================================
 
-Title: From Russia with Love
-Original Title: From Russia with Love
-Tagline: The world's masters of murder pull out all the
-stops to destroy Agent 007!
+Title: The Incredible Hulk
+Original Title: The Incredible Hulk
+Tagline: You'll like him when he's angry.
 
-Release Date: 1963-10-10
-Runtime: 115 minutes
+Release Date: 2008-06-12
+Runtime: 114 minutes
 Status: Released
 
 ------------------------------------------------------------
 📊 RATINGS & POPULARITY
 ------------------------------------------------------------
-IMDb ID: tt0057076
-Average Rating: 7.071 / 10
-Total Votes: 3220
-Popularity Score: 7.6664
+IMDb ID: tt0800080
+Average Rating: 6.229 / 10
+Total Votes: 12396
+Popularity Score: 11.2033
 
 ------------------------------------------------------------
 🎭 GENRES
 ------------------------------------------------------------
+• Science Fiction
 • Action
-• Thriller
 • Adventure
 
 ------------------------------------------------------------
 🧠 STORY OVERVIEW
 ------------------------------------------------------------
-Agent 007 is back in the second installment of the James
-Bond series, this time battling a secret crime organization
-known as SPECTRE. Russians Rosa Klebb and Kronsteen are out
-to snatch a decoding device known as the Lektor, using the
-ravishing Tatiana to lure Bond into helping them. Bond
-willingly travels to meet Tatiana in Istanbul, where he must
-rely on his wits to escape with his life in a series of
-deadly encounters with the enemy.
+Scientist Bruce Banner scours the planet for an antidote to
+the unbridled force of rage within him: the Hulk. But when
+the military masterminds who dream of exploiting his powers
+force him back to civilization, he finds himself coming face
+to face with a new, deadly foe.
 
 ------------------------------------------------------------
 🌍 PRODUCTION DETAILS
 ------------------------------------------------------------
 Production Companies:
-• EON Productions
-• United Artists
+• Marvel Studios
+• Valhalla Motion Pictures
+• Marvel Entertainment
 
 Production Countries:
-• United Kingdom
+• United States of America
 
 Original Language: en
 Spoken Languages:
+• Portuguese
+• Spanish
 • English
-• Russian
-• Turkish
-• Romanian
 
 ------------------------------------------------------------
 💰 FINANCIAL PERFORMANCE
 ------------------------------------------------------------
-Budget: $2000000
-Revenue: $78900000
+Budget: $150000000
+Revenue: $264770996
 
 ------------------------------------------------------------
 🔗 OFFICIAL LINKS
 ------------------------------------------------------------
 Homepage:
-https://mgm.com/movies/from-russia-with-love
+https://www.marvel.com/movies/the-incredible-hulk
 
 Poster Path:
-/zx4V17FP8oclNvOpTgs2iCCtiYk.jpg
+/gKzYx79y0AQTL4UAk1cBQJ3nvrm.jpg
 
 Backdrop Path:
-/8JMiQa0OqsCYvbNUrQIrMzwV7g2.jpg
+/jPu8yiadqgzwFPGKJmGo637ASVP.jpg
 
 ------------------------------------------------------------
 🗂 METADATA
 ------------------------------------------------------------
-TMDB ID: 657
-Origin Countries: GB
+TMDB ID: 1724
+Origin Countries: US
 
 ============================================================
 © Data provided by TMDB

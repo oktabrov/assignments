@@ -78,76 +78,8 @@ def get_info_of_the_movie(tmdb_movie_id):
             tmdb_id, origin_country]
 # Writes user-friendly text to the file report.lua
 def write_to_lua(list_of_info):
-    with open('report.lua', 'w', encoding="utf-8") as file:
-        text = f'''============================================================
-🎬 MOVIE PROFILE
-============================================================
-
-Title: {list_of_info[0]}
-Original Title: {list_of_info[1]}
-{f'Tagline: {list_of_info[2] if list_of_info[2] else 'Not available'}\n'}
-Release Date: {list_of_info[3]}
-Runtime: {list_of_info[4]} minutes
-Status: {list_of_info[5]}
-
-------------------------------------------------------------
-📊 RATINGS & POPULARITY
-------------------------------------------------------------
-IMDb ID: {list_of_info[6]}
-Average Rating: {list_of_info[7]} / 10
-Total Votes: {list_of_info[8]}
-Popularity Score: {list_of_info[9]}
-
-{f"""------------------------------------------------------------
-🎭 GENRES
-------------------------------------------------------------
-{list_of_info[10]}
-
-""" if list_of_info[10].strip('• ') else ''}------------------------------------------------------------
-🧠 STORY OVERVIEW
-------------------------------------------------------------
-{list_of_info[11]}
-
-------------------------------------------------------------
-🌍 PRODUCTION DETAILS
-------------------------------------------------------------
-{f'''Production Companies:
-{list_of_info[12]}
-
-''' if list_of_info[12] else ''}Production Countries:
-{list_of_info[13]}
-
-Original Language: {list_of_info[14]}
-Spoken Languages:
-{list_of_info[15]}
-
-------------------------------------------------------------
-💰 FINANCIAL PERFORMANCE
-------------------------------------------------------------
-Budget: ${list_of_info[16]}
-Revenue: ${list_of_info[17]}
-
-------------------------------------------------------------
-🔗 OFFICIAL LINKS
-------------------------------------------------------------
-Homepage:
-{list_of_info[18] if list_of_info[18] else "Not available"}
-
-Poster Path:
-{list_of_info[19]}
-
-Backdrop Path:
-{list_of_info[20]}
-
-------------------------------------------------------------
-🗂 METADATA
-------------------------------------------------------------
-TMDB ID: {list_of_info[21]}
-Origin Countries: {' '.join(list_of_info[22])}
-
-============================================================
-© Data provided by TMDB
-============================================================'''
+    with open('report.txt', 'w', encoding="utf-8") as file:
+        text = f'============================================================\n🎬 MOVIE PROFILE\n============================================================\n\nTitle: {list_of_info[0]}\nOriginal Title: {list_of_info[1]}\n{f'Tagline: {list_of_info[2] if list_of_info[2] else 'Not available'}\n'}\nRelease Date: {list_of_info[3]}\nRuntime: {list_of_info[4]} minutes\nStatus: {list_of_info[5]}\n\n------------------------------------------------------------\n📊 RATINGS & POPULARITY\n------------------------------------------------------------\nIMDb ID: {list_of_info[6]}\nAverage Rating: {list_of_info[7]} / 10\nTotal Votes: {list_of_info[8]}\nPopularity Score: {list_of_info[9]}\n\n{f"------------------------------------------------------------\n🎭 GENRES\n------------------------------------------------------------\n{list_of_info[10]}\n\n" if list_of_info[10].strip('• ') else ''}------------------------------------------------------------\n🧠 STORY OVERVIEW\n------------------------------------------------------------\n{list_of_info[11]}\n\n------------------------------------------------------------\n🌍 PRODUCTION DETAILS\n------------------------------------------------------------\n{f'Production Companies:\n{list_of_info[12]}\n\n' if list_of_info[12] else ''}Production Countries:\n{list_of_info[13]}\n\nOriginal Language: {list_of_info[14]}\nSpoken Languages:\n{list_of_info[15]}\n\n------------------------------------------------------------\n💰 FINANCIAL PERFORMANCE\n------------------------------------------------------------\nBudget: ${list_of_info[16]}\nRevenue: ${list_of_info[17]}\n\n------------------------------------------------------------\n🔗 OFFICIAL LINKS\n------------------------------------------------------------\nHomepage:\n{list_of_info[18] if list_of_info[18] else "Not available"}\n\nPoster Path:\n{list_of_info[19]}\n\nBackdrop Path:\n{list_of_info[20]}\n\n------------------------------------------------------------\n🗂 METADATA\n------------------------------------------------------------\nTMDB ID: {list_of_info[21]}\nOrigin Countries: {' '.join(list_of_info[22])}\n\n============================================================\n© Data provided by TMDB\n============================================================'
         file.write(text)
 # Calls other functions to get or do some tasks in order to find the movie user inserted. If there is no such movie or error occurs, the functions gently handles them
 def main():
@@ -169,7 +101,7 @@ def main():
         return f'Error: {error}'
     try:
         write_to_lua(list_of_info)
-        return "All information successfully saved to report.lua ✅"
+        return "All information successfully saved to report.txt ✅"
     except Exception as error:
         return f"Error: {error}"
 print(main())
