@@ -2,8 +2,8 @@ import requests
 OMDB_API_KEY = "719fe65e"
 TMDB_API_KEY = "f20a5695babfbd95db1c195cbe9f7e2a"
 BASE_URL_OMDB = "http://www.omdbapi.com/"
+# Returns the list of IDs of best-match movies. Takes them from OMDB
 def get_the_list(movie_name):
-    '''Rturns the list of IDs of best-match movies. Takes them from OMDB'''
     params = {"apikey": OMDB_API_KEY, "s": movie_name}
     response = requests.get(BASE_URL_OMDB, params=params).json()
     if response['Response'] == 'False':
@@ -12,8 +12,8 @@ def get_the_list(movie_name):
     for list_of_results in response['Search']:
         list_of_top_movies_found.append(list_of_results['imdbID'])
     return list_of_top_movies_found
+# Returns the given raw, oneline string as a formatted and cut one. This gives a userfriendly text for the report.lua file
 def format_long_text(raw, tagline = False):
-    '''Returns the given raw, oneline string as a formatted and cut one. This gives a userfriendly text for the report.lua file'''
     words = raw.split()
     max_len = 60
     formatted_string = ''
@@ -28,8 +28,8 @@ def format_long_text(raw, tagline = False):
             if i == len(words) - 1:
                 formatted_string += ' '.join(words[j:])
     return formatted_string.strip()
+# Gets full information about the movie by the movie ID. If not available, returns False. Uses the data of TMDB
 def get_info_of_the_movie(tmdb_movie_id):
-    '''Gets full information about the movie by the movie ID. If not available, returns False. Uses the data of TMDB'''
     BASE_URL_TMDB = f"https://api.themoviedb.org/3/movie/{tmdb_movie_id}"
     params = {"api_key": TMDB_API_KEY}
     response = requests.get(BASE_URL_TMDB, params=params)
@@ -47,13 +47,25 @@ def get_info_of_the_movie(tmdb_movie_id):
     vote_average = data['vote_average']
     vote_count = data['vote_count']
     popularity = data['popularity']
-    genres = '• ' + '\n• '.join([dict_of_genres['name'] for dict_of_genres in data['genres']])
+    list_of_chars_of_genres = []
+    for dict_of_genres in data['genres']:
+        list_of_chars_of_genres.append(dict_of_genres['name'])
+    genres = '• ' + '\n• '.join(list_of_chars_of_genres)
     raw_overview = data['overview']
     overview = format_long_text(raw_overview)
-    production_companies = '• ' + '\n• '.join([dict_of_companies['name'] for dict_of_companies in data['production_companies']])
-    production_countries = '• ' + '\n• '.join([dict_of_countries['name'] for dict_of_countries in data['production_countries']])
+    list_of_chars_of_production_companies = []
+    for dict_of_companies in data['production_companies']:
+        list_of_chars_of_production_companies.append(dict_of_companies['name'])
+    production_companies = '• ' + '\n• '.join(list_of_chars_of_production_companies)
+    list_of_chars_of_production_countries = []
+    for dict_of_countries in data['production_countries']:
+        list_of_chars_of_production_countries.append(dict_of_countries['name'])
+    production_countries = '• ' + '\n• '.join(list_of_chars_of_production_countries)
     original_language = data['original_language']
-    spoken_languages = '• ' + '\n• '.join([dict_of_spoken_languages['english_name'] for dict_of_spoken_languages in data['spoken_languages']]) 
+    list_of_chars_of_spoken_langues = []
+    for dict_of_spoken_languages in data['spoken_languages']:
+        list_of_chars_of_spoken_langues.append(dict_of_spoken_languages['english_name'])
+    spoken_languages = '• ' + '\n• '.join(list_of_chars_of_spoken_langues) 
     budget = data['budget']
     revenue = data['revenue']
     homepage = data['homepage']
@@ -64,8 +76,8 @@ def get_info_of_the_movie(tmdb_movie_id):
     return [title, originial_title, tagline, release_date, runtime, status, imdb_id, vote_average, vote_count, popularity, genres, overview,
             production_companies, production_countries, original_language, spoken_languages, budget, revenue, homepage, poster_path, backdrop_path,
             tmdb_id, origin_country]
+# Writes user-friendly text to the file report.lua
 def write_to_lua(list_of_info):
-    '''Writes user-friendly text to the file report.lua'''
     with open('report.lua', 'w', encoding="utf-8") as file:
         text = f'''============================================================
 🎬 MOVIE PROFILE
@@ -137,8 +149,8 @@ Origin Countries: {' '.join(list_of_info[22])}
 © Data provided by TMDB
 ============================================================'''
         file.write(text)
+# Calls other functions to get or do some tasks in order to find the movie user inserted. If there is no such movie or error occurs, the functions gently handles them
 def main():
-    '''Calls other functions to get or do some tasks in order to find the movie user inserted. If there is no such movie or error occurs, the functions gently handles them'''
     movie_name = input("Please enter the movie name: ")
     try:
         print("Searching for the best matches...")
