@@ -1,4 +1,4 @@
-def track_usage(data_log: list) -> dict:
+def track_usage(data_log):
     data = {}
     for i in data_log:
         d, u, m = i.split(';')
@@ -9,7 +9,7 @@ def track_usage(data_log: list) -> dict:
         else:
             data[d] = [(u, int(m))]
     return data
-def audit_departments(network_dict: dict) -> str:
+def audit_departments(network_dict):
     s = ''
     for i, j in network_dict.items():
         s += str(i)+': '
