@@ -17,4 +17,4 @@ def audit_departments(network_dict):
         for user, mb in j:
             total_mb += mb
         s += f"{total_mb} MB total\n"
-    return s
+    print(s)
